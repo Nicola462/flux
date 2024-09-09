@@ -1,6 +1,12 @@
-img/cenario-passo0.png
-img/cenario-passo11-cidade-perdida.png
-img/cenario-passo4-voltar-casa.png
+const avanca = document.querySelectorAll('.btn-proximo');
 
+avanca.forEach(button => {
+    button.addEventListener('click', function(){
+        const atual = document.querySelector('.ativo');
+        const proximoPasso = 'passo-' + this.getAttribute('data-proximo');
 
+        atual.classList.remove('ativo');
+        document.getElementById(proximoPasso).classList.add('ativo');
+    })
+})
       
